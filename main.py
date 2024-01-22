@@ -1,16 +1,31 @@
-# This is a sample Python script.
+# Створити ієрархію класів для опису академії.
+# Зразковий список класів: Person, Teacher, Student, Subject, Academy і т.д.
+# Продумати архітектуру: реалізувати принципи ООП
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class Person:
+    __name = "noname"
+    __age = 60
 
+    def __init__(self, name, age):
+        pass
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    @property
+    def name(self):
+        return self.__name
 
+    @name.setter
+    def name(self, name):
+        if name > 2:
+            self.__name = name
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    @property
+    def age(self):
+        return self.__age
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    @age.setter
+    def age(self, age):
+        if age > 18:
+            self.__age = age
+
+    def show_info(self):
+        print(f"This person's name is {self.name}. {self.age} years old.")
